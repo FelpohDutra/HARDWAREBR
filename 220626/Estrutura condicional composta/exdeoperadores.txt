@@ -1,0 +1,15 @@
+1) x=8; y=15; z=3; idade=17; nota=7; chovendo = VERDADEIRO
+:
+a) x>5 x<10 (VERDADEIRO)
+b) y=15 ou z=10 (VERDADEIRO)
+c) NÃO (z>5) (VERDADEIRO)
+d) x+z=11 E y>10 (FALSO)
+e) (x<y) E (z ≠ 3) (FALSO)
+f) idade < 18 E nota > 7 (FALSO)
+g) (x + z = 11) E (y = 15) E (nota = 7) (VERDADEIRO)
+h) x = 3 OU y=3 OU z=3 (VERDADEIRO)
+i) x = 8 OU y = 10 E z = 4 (FALSO)
+j) x = 0 ou chovendo=Verdadeiro (VERDADEIRO)
+k) x = 0 ou chovendo (VERDADEIRO)
+
+2)
