@@ -1,6 +1,6 @@
 import os
 
-os.system("cls")
+os.system("clear")
 
 x = int(input("Digite um numero para ver seu dobro \n"))
 res = x*2
