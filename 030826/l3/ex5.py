@@ -1,8 +1,10 @@
-var = 2
+"""
+Esse exercicio é continuação do exercicio 3
+"""
+var = 1
 
-def alteradorParam(var):
-    var = var*2
-    print(var)
+def mult(var):
+    return var*2
 
-alteradorParam(var)
+var = mult(var)
 print(var)
