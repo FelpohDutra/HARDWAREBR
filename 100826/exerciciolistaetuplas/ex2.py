@@ -1,8 +1,12 @@
 def listaPares(lista):
-    0
+    pares = [n for n in lista if n%2==0]
+
+    return pares
 
 def listaImpares(lista):
-    0
+    impares = [n for n in lista if n%3==0]
+
+    return impares
 
 print("Digite numeros para descobrir quais deles são pares e quais são impares.\nDigite 0 para parar de ler")
 num = int(input())
