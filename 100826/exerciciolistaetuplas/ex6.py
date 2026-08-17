@@ -21,5 +21,5 @@ while escolha!=3:
         else:
             print("\nItens:")
             for item in estoque:
-                print(f"{item[0]} | Quantidade: {item[1]} | Preço:R$ {item[2]} (R${(item[2] * item[1])})")
+                print(f"{item[0]} | Quantidade: {item[1]} | Preço: R$ {item[2]:.2f} (R${(item[2] * item[1]):.2f})")
 print("\n### Finalizando sistema ###")
