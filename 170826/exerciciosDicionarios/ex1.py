@@ -1,0 +1,2 @@
+produto ={"nome": "Bateria", "preço": 1200, "quantidade": 2}
+print(f"{produto["nome"]}, custa R${produto["preço"]:.2f} (Total no sistema: {produto["quantidade"]} ({(produto["preço"] * produto["quantidade"])}))")
