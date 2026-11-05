@@ -1,0 +1,16 @@
+<h1>Histórico </h1>
+<h2>Vitórias: {{ vitorias }} | Derrotas: {{ derrotas }} | Empates: {{ empates }}</h2>
+
+<ul>
+{% for partida in partidas %}
+    <li>
+        {{ partida.criada_em }} —
+        Você: {{ partida.jogador }} |
+        PC: {{ partida.computador }} |
+        {{ partida.resultado }}
+    </li>
+{% empty %}
+    <li>Nenhuma partida ainda.</li>
+{% endfor %}
+</ul>
+<a href="/"> Inicio</a> &nbsp;

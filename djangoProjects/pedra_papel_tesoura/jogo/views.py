@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Partida
 import random
 
 
@@ -9,6 +10,31 @@ def boas_vindas(request):
         request,
         'jogo/boas_vindas.html'
     )
+
+def historico(request):
+    
+    partidas = Partida.objects.order_by(
+        "-criada_em",
+    )
+    
+    #Mostrar somente partidas que o jogador escolheu pedra
+
+    #partidas = Partida.objects.filter(jogador='pedra').order_by(
+    #    "-criada_em"
+    #)
+    
+    vitorias = Partida.objects.filter(resultado='vitoria').count()
+    derrotas = Partida.objects.filter(resultado='derrota').count()
+    empates = Partida.objects.filter(resultado='empate').count()
+
+    return render(request,
+                  "jogo/historico.html",
+                  {
+                      "partidas": partidas,
+                      "vitorias": vitorias,
+                      "derrotas": derrotas,
+                      "empates": empates,
+                  })
 
 OPCOES = ['pedra', 'papel', 'tesoura']
 
@@ -33,6 +59,13 @@ def jogar(request):
 
         ctx['resultado'] = resultado
 
+        Partida.objects.create(
+            jogador=jogada_usuario,
+            computador=jogada_pc,
+            resultado=resultado,
+        )
+
     return render(
         request, 'jogo/jogar.html', ctx
     )
+

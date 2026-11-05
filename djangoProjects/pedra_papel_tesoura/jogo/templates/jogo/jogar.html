@@ -23,10 +23,13 @@
        <p>Computador jogou: <strong>{{ jogada_pc }}</strong></p>
     {% if resultado == 'vitoria' %}
         <h2 class="vitoria"> Você ganhou!</h2>
+        <a href="../historico"> Historico</a> &nbsp;
     {% elif resultado == 'derrota' %}
         <h2 class="derrota"> Você perdeu...</h2>
+        <a href="../historico"> Historico</a> &nbsp;
     {% else %}
         <h2 class="empate"> Empate!</h2>
+        <a href="../historico"> Historico</a> &nbsp;
      {% endif %}
     {% endif %}
 </body>
