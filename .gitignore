@@ -1,0 +1,11 @@
+# Ambiente virtual
+venv/
+**/venv/
+.venv/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Banco de dados local do Django (opcional, evita conflito entre devs)
+db.sqlite3
