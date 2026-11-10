@@ -1,0 +1,34 @@
+<h1>Minhas Tarefas</h1>
+
+<p><a href="{% url 'criar_tarefa' %}">+ Nova tarefa</a></p>
+
+<nav>
+  <a href="?status=todas">{% if status == "todas" %}<strong>Todas</strong>{% else %}Todas{% endif %}</a> |
+  <a href="?status=pendentes">{% if status == "pendentes" %}<strong>Pendentes</strong>{% else %}Pendentes{% endif %}</a> |
+  <a href="?status=concluidas">{% if status == "concluidas" %}<strong>Concluídas</strong>{% else %}Concluídas{% endif %}</a>
+</nav>
+
+{% if tarefas %}
+<ul>
+  {% for tarefa in tarefas %}
+  <li>
+    <strong>{{ tarefa.titulo }}</strong>
+    - Prioridade: {{ tarefa.get_prioridade_display }}
+    - Status: {% if tarefa.concluida %}Concluída{% else %}Pendente{% endif %}
+
+    <a href="{% url 'detalhe_tarefa' tarefa.pk %}">Detalhes</a>
+    <a href="{% url 'editar_tarefa' tarefa.pk %}">Editar</a>
+    <a href="{% url 'excluir_tarefa' tarefa.pk %}">Excluir</a>
+
+    <form method="post" action="{% url 'alternar_tarefa' tarefa.pk %}" style="display:inline">
+      {% csrf_token %}
+      <button type="submit">
+        {% if tarefa.concluida %}Marcar como pendente{% else %}Marcar como concluída{% endif %}
+      </button>
+    </form>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>Nenhuma tarefa encontrada.</p>
+{% endif %}
