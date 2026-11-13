@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Desconto Progressivo</title>
+</head>
+<body>
+    <input type="number" id="preco" step="any">
+    <button onclick="desconto()">Calcular</button>
+    <div id="resultado"></div>
+
+    <script>
+    function desconto() {
+        let preco = parseFloat(document.getElementById("preco").value);
+        let desc;
+        if (preco > 1000) desc = 0.20;
+        else if (preco > 500) desc = 0.15;
+        else if (preco > 200) desc = 0.10;
+        else desc = 0;
+        let final = preco * (1 - desc);
+        document.getElementById("resultado").innerText =
+            "R$ " + final.toFixed(2) + " (" + (desc*100) + "% off)";
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cafeteria</title>
+</head>
+<body>
+    <select id="codigo" onchange="menu()">
+        <option value="">Escolha</option>
+        <option value="1">Café Expresso</option>
+        <option value="2">Cappuccino</option>
+        <option value="3">Macchiato</option>
+    </select>
+    <div id="resultado"></div>
+    <script>
+    function menu() {
+        let cod = document.getElementById("codigo").value;
+        let div = document.getElementById("resultado");
+        switch (cod) {
+            case "1": div.innerText = "☕ R$ 4,50"; break;
+            case "2": div.innerText = "☕ R$ 6,50"; break;
+            case "3": div.innerText = "☕ R$ 7,00"; break;
+            default: div.innerText = "";
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Desconto</title>
+</head>
+<body>
+    <input type="number" id="preco" step="any">
+    <button onclick="desconto()">Calcular</button>
+    <div id="resultado"></div>
+    <script>
+    function desconto() {
+        let preco = parseFloat(document.getElementById("preco").value);
+        let div = document.getElementById("resultado");
+        if (preco > 100) {
+            let final = preco * 0.9;
+            div.innerText = "Com desconto: R$ " + final.toFixed(2);
+        } else {
+            div.innerText = "Sem desconto: R$ " + preco.toFixed(2);
+        }
+    }
+    </script>
+</body>
+</html>

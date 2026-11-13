@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Área de um Retângulo</title>
+</head>
+<body>
+    <input type="number" id="base" step="any">
+    <input type="number" id="altura" step="any">
+
+    <button onclick="area()">Calcular</button>
+    
+    <div id="resultado"></div>
+    <script>
+    function area() {
+        let b = parseFloat(document.getElementById("base").value);
+        let h = parseFloat(document.getElementById("altura").value);
+        document.getElementById("resultado").innerText = "Área: " + (b * h);
+    }
+    </script>
+</body>
+</html>

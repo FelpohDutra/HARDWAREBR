@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>MMC</title>
+</head>
+<body>
+    <input type="number" id="x">
+    <input type="number" id="y">
+    <button onclick="mmc()">Calcular</button>
+    <div id="resultado"></div>
+
+    <script>
+    function mmc() {
+        let x = parseInt(document.getElementById("x").value);
+        let y = parseInt(document.getElementById("y").value);
+        let maior = Math.max(x, y);
+        let r = maior;
+        while (true) {
+            if (r % x === 0 && r % y === 0) break;
+            r += maior;
+        }
+        document.getElementById("resultado").innerText = "MMC: " + r;
+    }
+    </script>
+</body>
+</html>

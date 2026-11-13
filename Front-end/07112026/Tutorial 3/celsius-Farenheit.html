@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Área de um Retângulo</title>
+</head>
+<body>
+    <input type="number" id="celsius" step="any">
+
+    <button onclick="converter()">Converter</button>
+    <div id="resultado"></div>
+    <script>
+    function converter() {
+        let celcius = parseFloat(document.getElementById("celsius").value);
+        let farenheit = (c * 9/5) + 32;
+        document.getElementById("resultado").innerText =
+            celcius + "°C = " + farenheit.toFixed(2) + "°F";
+    }
+    </script>
+</body>
+</html>

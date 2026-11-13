@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contagem de Pares</title>
+</head>
+<body>
+    <input type="number" id="max">
+    <button onclick="pares()">Listar</button>
+    <div id="resultado"></div>
+    <script>
+    function pares() {
+        let max = parseInt(document.getElementById("max").value);
+        let div = document.getElementById("resultado");
+        div.innerHTML = "";
+        let n = 1;
+        while (n <= max) {
+            if (n % 2 === 0) {
+                let span = document.createElement("span");
+                span.innerText = n + " ";
+                div.appendChild(span);
+            }
+            n++;
+        }
+    }
+    </script>
+</body>
+</html>

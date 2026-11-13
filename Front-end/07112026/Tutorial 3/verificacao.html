@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <titles>Verificação de Nota</titles>
+</head>
+<body>
+    <input type="number" id="n1" step="any">
+    <input type="number" id="n2" step="any">
+    <button onclick="verificar()">Verificar</button>
+    <div id="resultado"></div>
+    <script>
+    function verificar() {
+        let n1 = parseFloat(document.getElementById("n1").value);
+        let n2 = parseFloat(document.getElementById("n2").value);
+        let media = (n1 + n2) / 2;
+        let div = document.getElementById("resultado");
+        if (media >= 6) {
+            div.innerText = "Aprovado! Média: " + media.toFixed(2);
+            div.style.color = "green";
+        } else {
+            div.innerText = "Reprovado. Média: " + media.toFixed(2);
+            div.style.color = "red";
+        }
+    }
+    </script>
+</body>
+</html>
